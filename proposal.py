@@ -23,13 +23,13 @@ def on_no_click_third():
     show_image_and_msg(image_path, msg, on_no_click_fourth, on_yes_click)
 
 def on_no_click_fourth():
-    # This is the fifth image and message after four "No" clicks.
+    
     image_path = "anime-boy-anime.gif"  # Replace with your desired final image
     msg = "------good byyy!-----"
     show_image_and_msg(image_path, msg, on_no_click_fourth, on_yes_click)
 
 def show_image_and_msg(image_path, msg, no_function=None, yes_function=None):
-    # Clear the window before displaying new content
+    
     for widget in root.winfo_children():
         widget.destroy()
 
@@ -57,17 +57,16 @@ def show_image_and_msg(image_path, msg, no_function=None, yes_function=None):
         messagebox.showerror("File Not Found", f"The image file at {image_path} could not be found.")
         root.quit()
 
-# Create the main application window
+
 root = tk.Tk()
 root.title("Image Choice Application")
 root.geometry("800x700")
 
-# Initial image and message
+
 initial_image_path = "last3.jpg"
 initial_msg = "I love you."
 
-# Show the initial image and message
 show_image_and_msg(initial_image_path, initial_msg, on_no_click_first, on_yes_click)
 
-# Start the Tkinter event loop
+
 root.mainloop()
